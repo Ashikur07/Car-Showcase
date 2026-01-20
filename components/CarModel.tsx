@@ -107,7 +107,7 @@ type GLTFResult = GLTF & {
     sidetyre: THREE.MeshStandardMaterial
     Material: THREE.MeshStandardMaterial
   }
-  animations: GLTFAction[]
+  animations: THREE.AnimationClip[]
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
