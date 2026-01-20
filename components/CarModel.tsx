@@ -111,7 +111,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: React.JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/models/car.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('/models/car.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh castShadow receiveShadow geometry={nodes.Object_8.geometry} material={materials.bBMW_M4CompetitionG82TNR0_2021PaintTNR_Material_004} position={[0, 0.424, 0]} />
