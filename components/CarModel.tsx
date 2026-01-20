@@ -110,7 +110,8 @@ type GLTFResult = GLTF & {
   animations: THREE.AnimationClip[]
 }
 
-export function Model(props: React.JSX.IntrinsicElements['group']) {
+// 👇 আপডেট ১: এখানে engineRef রিসিভ করছি এবং any টাইপ দিচ্ছি
+export function Model({ engineRef, ...props }: any) {
   const { nodes, materials } = useGLTF('/models/car.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
@@ -123,7 +124,10 @@ export function Model(props: React.JSX.IntrinsicElements['group']) {
       <mesh castShadow receiveShadow geometry={nodes.Object_26.geometry} material={materials['bBMW_M4CompetitionG82TNR0_2021Base_Material1.001']} position={[0, 0.424, 0]} />
       <mesh castShadow receiveShadow geometry={nodes.Object_32.geometry} material={materials['bBMW_M4CompetitionG82TNR0_2021Base_Material1.001']} scale={14.746} />
       <mesh castShadow receiveShadow geometry={nodes.Object_35.geometry} material={materials['bBMW_M4CompetitionG82TNR0_2021Base_Material1.001']} position={[0, 0.424, 0]} />
-      <mesh castShadow receiveShadow geometry={nodes.Object_41.geometry} material={materials.bBMW_M4CompetitionG82TNR0_2021EngineA_Material1} position={[0, 0.444, 0]} rotation={[Math.PI / 2, 0, 0]} scale={4.822} />
+      
+      {/* 👇 আপডেট ২: এই ইঞ্জিনে ref={engineRef} বসানো হয়েছে */}
+      <mesh ref={engineRef} castShadow receiveShadow geometry={nodes.Object_41.geometry} material={materials.bBMW_M4CompetitionG82TNR0_2021EngineA_Material1} position={[0, 0.444, 0]} rotation={[Math.PI / 2, 0, 0]} scale={4.822} />
+      
       <mesh castShadow receiveShadow geometry={nodes.Object_44.geometry} material={materials.bBMW_M4CompetitionG82TNR0_2021Coloured_Material_004} position={[0, 0.444, 0]} rotation={[Math.PI / 2, 0, 0]} scale={4.822} />
       <mesh castShadow receiveShadow geometry={nodes.Object_47.geometry} material={materials.bBMW_M4CompetitionG82TNR0_2021Carbon1_Material1} position={[0, 0.444, 0]} rotation={[Math.PI / 2, 0, 0]} scale={4.822} />
       <mesh castShadow receiveShadow geometry={nodes.Object_50.geometry} material={materials.bBMW_M4CompetitionG82TNR0_2021GrilleNoAlpha5A_Material1} position={[0, 0.444, 0]} rotation={[Math.PI / 2, 0, 0]} scale={4.822} />
