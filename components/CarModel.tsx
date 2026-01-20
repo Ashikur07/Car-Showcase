@@ -110,7 +110,7 @@ type GLTFResult = GLTF & {
   animations: THREE.AnimationClip[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export function Model(props: React.JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/car.glb') as GLTFResult
   return (
     <group {...props} dispose={null}>
