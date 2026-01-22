@@ -1,34 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion"; // Variants টাইপ ইমপোর্ট করলাম
 import { useRef } from "react";
 
-// --- 🔥 SLOW CINEMATIC VARIANTS ---
+// --- 🔥 SLOW CINEMATIC VARIANTS (Fixed) ---
 
-// ১. টেক্সট মাস্ক (অনেক স্লো)
-const maskReveal = {
+// ১. টেক্সট মাস্ক
+const maskReveal: Variants = {
   hidden: { y: "100%" },
   visible: { 
     y: "0%",
     transition: { 
-      duration: 2.2, // আগে ছিল 1.2, এখন ২.২ সেকেন্ড ধরে আসবে
-      ease: [0.25, 1, 0.5, 1], 
+      duration: 2.2, 
+      // 👇 এখানে ফিক্স করা হয়েছে: 'as [number, number, number, number]' যোগ করা হয়েছে
+      ease: [0.25, 1, 0.5, 1] as [number, number, number, number], 
     }
   },
 };
 
-// ২. গাড়ি ব্লার ইফেক্ট (আরো স্লো এবং স্মুথ)
-const carCinematic = {
-  hidden: { opacity: 0, scale: 1.1, filter: "blur(15px)" }, // ব্লার একটু বাড়ালাম
+// ২. গাড়ি ব্লার ইফেক্ট
+const carCinematic: Variants = {
+  hidden: { 
+    opacity: 0, 
+    scale: 1.1, 
+    filter: "blur(15px)" 
+  },
   visible: { 
     opacity: 1, 
     scale: 1, 
     filter: "blur(0px)",
     transition: { 
-      duration: 2.5, // আগে ছিল 1.5, এখন ২.৫ সেকেন্ড
-      ease: [0.22, 1, 0.36, 1], // Custom "Cinematic" Easing
-      delay: 0.4 // একটু পরে শুরু হবে
+      duration: 2.5, 
+      // 👇 এখানেও ফিক্স করা হয়েছে
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      delay: 0.4 
     }
   },
 };
@@ -94,7 +100,7 @@ export default function Hero() {
             <motion.h3 
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ delay: 1.5, duration: 1.5, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ delay: 1.5, duration: 1.5, ease: [0.25, 1, 0.5, 1] as [number, number, number, number] }}
               className="font-oswald text-xl text-red-600 tracking-widest uppercase"
             >
               The Ultimate
@@ -104,7 +110,7 @@ export default function Hero() {
             <motion.p 
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
-              transition={{ delay: 1.8, duration: 1.5, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ delay: 1.8, duration: 1.5, ease: [0.25, 1, 0.5, 1] as [number, number, number, number] }}
               className="text-gray-400 text-sm"
             >
               Driving Machine
