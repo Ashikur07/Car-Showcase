@@ -47,10 +47,10 @@ export default function Features() {
       {/* --- BENTO GRID LAYOUT --- */}
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[600px]">
         
-        {/* CARD 1: LASER LIGHTS (Large - Span 2 col, 2 row) */}
+        {/* CARD 1: LASER LIGHTS (বড় ইমেজ - বাম পাশে) */}
         <FeatureCard className="md:col-span-2 md:row-span-2 relative min-h-[300px]">
             <Image 
-                src="/feature-light.jpg" // ইমেজ পাথ
+                src="/feature-light.jpg" 
                 alt="BMW Laser Light" 
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
@@ -63,10 +63,10 @@ export default function Features() {
             </div>
         </FeatureCard>
 
-        {/* CARD 2: CARBON BRAKES (Top Right - Span 1 col) */}
+        {/* CARD 2: CARBON BRAKES (ছোট ইমেজ - উপরে ডানে) */}
         <FeatureCard className="relative min-h-[250px]" delay={0.2}>
             <Image 
-                src="/feature-brake.jpg" // ইমেজ পাথ
+                src="/feature-brake.jpg" 
                 alt="Carbon Ceramic Brakes" 
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-70"
@@ -77,19 +77,21 @@ export default function Features() {
             </div>
         </FeatureCard>
 
-        {/* CARD 3: WEIGHT DIST (Top Far Right - Span 1 col) */}
-        <FeatureCard className="bg-[#1a1a1a] flex flex-col justify-center p-8 relative" delay={0.3}>
-            {/* Background Pattern */}
-            <div className="absolute top-0 right-0 p-4 opacity-10 font-bold text-9xl leading-none select-none">50</div>
-            
-            <h3 className="text-4xl font-bold font-oswald mb-1">50:50</h3>
-            <p className="text-gray-400 text-xs uppercase tracking-widest mb-4">Weight Dist.</p>
-            <p className="text-gray-500 text-sm leading-relaxed">
-                Perfectly balanced chassis for agile handling and superior cornering stability.
-            </p>
+        {/* CARD 3: EXHAUST SYSTEM (🔥 নতুন - ৩য় ইমেজ এখানে বসানো হলো) */}
+        <FeatureCard className="relative min-h-[250px]" delay={0.3}>
+            <Image 
+                src="/feature-rear.jpg" // তোমার ৩য় ইমেজের নাম চেক করো
+                alt="M Sport Exhaust" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-70"
+            />
+            <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
+                <h3 className="text-xl font-bold font-oswald uppercase">M Sport Exhaust</h3>
+                <p className="text-gray-400 text-xs mt-1">Quad tailpipes with active sound.</p>
+            </div>
         </FeatureCard>
 
-        {/* CARD 4: DRIFT ANALYZER (Bottom Right - Span 2 col) */}
+        {/* CARD 4: DRIFT ANALYZER (নিচে ডানে - গ্রাফিক্স) */}
         <FeatureCard className="md:col-span-2 relative min-h-[250px] flex items-center bg-gradient-to-r from-[#151515] to-[#0f0f0f]" delay={0.4}>
             <div className="flex flex-col md:flex-row items-center gap-8 p-8 w-full z-20">
                 <div className="flex-1">
@@ -101,7 +103,7 @@ export default function Features() {
                         Records the duration, distance, and angle of your latest drift. Are you ready to beat your high score?
                     </p>
                 </div>
-                {/* Visual Representation (Fake Graph) */}
+                {/* Visual Representation (Graph) */}
                 <div className="w-full md:w-1/3 h-16 flex items-end gap-1 opacity-50">
                     {[40, 60, 30, 80, 50, 90, 70, 40].map((h, i) => (
                         <motion.div 
