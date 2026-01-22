@@ -1,7 +1,13 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
-    <main className="h-screen w-full">
-      <h1 className="text-5xl">3D Car Project Setup Ready</h1>
+    <main>
+      <Hero />
+      {/* স্ক্রল টেস্ট করার জন্য নিচে কিছু ফাঁকা জায়গা রাখলাম */}
+      <div className="h-screen bg-black flex items-center justify-center text-white/20">
+        Next Section Coming Soon...
+      </div>
     </main>
   );
 }
