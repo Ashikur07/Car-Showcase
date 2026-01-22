@@ -7,16 +7,15 @@ import { Model } from "./CarModel";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Group, Mesh } from "three";
+import { Group } from "three";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Experience() {
   const carRef = useRef<Group>(null);
-  const engineRef = useRef<Mesh>(null); // ইঞ্জিনের জন্য আলাদা রেফারেন্স
 
   useGSAP(() => {
-    if (!carRef.current || !engineRef.current) return;
+    if (!carRef.current) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -27,33 +26,16 @@ export default function Experience() {
       },
     });
 
-    // --- MAGIC ANIMATION START ---
+    // এখানে শুধু গাড়ির ঘোরানোর কাজ হবে
+    // ইঞ্জিন বের হওয়ার কাজ CarModel.tsx নিজেই করবে
 
-    // ধাপ ১: গাড়ি বামে যাবে, ইঞ্জিন ডানে বেরিয়ে আসবে
-    
-    // ১. পুরো গাড়ি ঘুরবে এবং বামে সরবে
+    // ধাপ ১: গাড়ি ঘুরবে এবং বামে যাবে
+    tl.to(carRef.current.position, { x: -3 }, 0);
     tl.to(carRef.current.rotation, { y: Math.PI / 2 }, 0);
-    tl.to(carRef.current.position, { x: -2 }, 0);
 
-    // ২. ইঞ্জিন শরীর থেকে বেরিয়ে আসবে (Explosion!) 💥
-    tl.to(engineRef.current.position, {
-      x: 5,   // ডানে সরে যাবে
-      y: 2,   // একটু উপরে উঠবে
-      z: 2,   // সামনে আসবে
-      duration: 1
-    }, 0); // '0' মানে গাড়ির সাথে সাথেই বের হবে
-
-    // ধাপ ২: ইঞ্জিন আবার শরীরে ঢুকে যাবে (Reset)
-    tl.to(carRef.current.rotation, { y: 0 }, 1);
+    // ধাপ ২: রিসেট
     tl.to(carRef.current.position, { x: 0 }, 1);
-    
-    // ইঞ্জিন রিসেট (আগের জায়গায় ফিরে যাবে)
-    tl.to(engineRef.current.position, {
-      x: 0, // অরিজিনাল পজিশন (রিলেটিভ)
-      y: 0.444, // অরিজিনাল Y (CarModel ফাইলে যা ছিল)
-      z: 0,
-      duration: 1
-    }, 1);
+    tl.to(carRef.current.rotation, { y: 0 }, 1);
 
   }, { scope: carRef });
 
@@ -65,8 +47,7 @@ export default function Experience() {
 
         <Suspense fallback={null}>
           <group ref={carRef} position={[0, -0.5, 0]} scale={0.20}>
-            {/* আমরা engineRef টা প্রপস হিসেবে পাঠিয়ে দিচ্ছি */}
-            <Model engineRef={engineRef} />
+            <Model />
           </group>
         </Suspense>
 
