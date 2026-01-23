@@ -6,6 +6,7 @@ import Gallery from "@/components/Gallery";
 import Features from "@/components/Features";
 import VideoSection from "@/components/VideoSection";
 import Footer from "@/components/Footer";
+import HorizontalScroll from "@/components/HorizontalScroll";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Gallery />
       <Features />
       <VideoSection />
+      <HorizontalScroll />
       
       {/* টেম্পোরারি নেক্সট সেকশন প্লেসহোল্ডার */}
       <div className="h-screen bg-black flex items-center justify-center text-white/20">
