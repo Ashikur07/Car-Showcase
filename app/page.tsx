@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar"; // ইমপোর্ট করো
+import Navbar from "@/components/Navbar"; 
 import Performance from "@/components/Performance";
 import Interior from "@/components/Interior";
 import Gallery from "@/components/Gallery";
 import Features from "@/components/Features";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <div className="h-screen bg-black flex items-center justify-center text-white/20">
         Next Section Coming Soon...
       </div>
+      <Footer />
     </main>
   );
 }
