@@ -20,10 +20,7 @@ export default function Home() {
       <VideoSection />
       <HorizontalScroll />
       
-      {/* টেম্পোরারি নেক্সট সেকশন প্লেসহোল্ডার */}
-      <div className="h-screen bg-black flex items-center justify-center text-white/20">
-        Next Section Coming Soon...
-      </div>
+   
       <Footer />
     </main>
   );
