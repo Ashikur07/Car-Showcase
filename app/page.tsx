@@ -20,7 +20,6 @@ export default function Home() {
       <VideoSection />
       <HorizontalScroll />
       
-   
       <Footer />
     </main>
   );
