@@ -1,32 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏎️ Car Showcase — High-End Motion Experience
 
-## Getting Started
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/80ca0a3e-e099-4258-8421-524a5f416e04" alt="Car Showcase Banner" width="100%" style="border-radius: 20px; border: 1px solid #222;" />
+</p>
 
-First, run the development server:
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js%2015-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="NextJS" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" alt="GSAP" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+</p>
 
-```bash
-npm run dev 
-# or
-yarn dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 Overview
+**Car Showcase** is an immersive digital experience built with **Next.js 15** that redefines how automotive aesthetics are presented online. By leveraging advanced **GSAP ScrollTrigger** and **Framer Motion**, this project offers a fluid, interactive journey through performance, interior detail, and cinematic gallery sections.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Immersive UI Features
+* **🎬 Cinematic Hero:** A full-screen video and motion-heavy introduction using custom `Hero.tsx`.
+* **🌀 Advanced Scroll Orchestration:** Features custom horizontal scrolling and smooth-scroll transitions powered by **GSAP**.
+* **🖼️ Interactive Media Gallery:** High-resolution galleries with staggered animation entries for performance and interior highlights.
+* **⚡ Precision Preloading:** A custom `Preloader` component ensures all heavy visual assets are ready for a lag-free experience.
+* **📱 Adaptive Elite Design:** Fully responsive layout that maintains a premium aesthetic across all screen sizes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Technical Tech Stack
+* **Framework:** Next.js (App Router)
+* **Language:** TypeScript & React 19
+* **Animation Engine:** GSAP (ScrollTrigger) & Framer Motion
+* **Styling:** Tailwind CSS
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Project Navigation
+* `app/` — Main application logic and layout.
+* `components/` — Specialized UI units like `Gallery`, `Performance`, and `SmoothScroll`.
+* `public/` — Optimized video and image assets.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🚀 Local Installation
+
+1. **Clone Repo:**
+   ```bash
+   git clone [https://github.com/Ashikur07/car-showcase.git](https://github.com/Ashikur07/car-showcase.git)
