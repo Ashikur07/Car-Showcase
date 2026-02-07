@@ -48,4 +48,4 @@
 
 1. **Clone Repo:**
    ```bash
-   git clone [https://github.com/Ashikur07/car-showcase.git](https://github.com/Ashikur07/car-showcase.git)
+   git clone [https://github.com/Ashikur07/car-showcase.git](https://github.com/Ashikur07/car-showcase.git) 
